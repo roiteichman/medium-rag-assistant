@@ -152,6 +152,7 @@ def root():
 
 
 @app.route("/api/prompt", methods=["POST"])
+@app.route("/prompt", methods=["POST"])
 def prompt():
     body = request.get_json(force=True, silent=True) or {}
     question = (body.get("question") or "").strip()
@@ -190,6 +191,7 @@ def prompt():
 
 
 @app.route("/api/stats", methods=["GET"])
+@app.route("/stats", methods=["GET"])
 def stats():
     return jsonify({
         "chunk_size":    1024,

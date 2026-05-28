@@ -1,10 +1,7 @@
 {
-  "functions": {
-    "api/prompt.py": {
-      "maxDuration": 60
-    },
-    "api/stats.py": {
-      "maxDuration": 60
-    }
-  }
+  "version": 2,
+  "builds": [
+    { "src": "api/prompt.py", "use": "@vercel/python" },
+    { "src": "api/stats.py",  "use": "@vercel/python" }
+  ]
 }

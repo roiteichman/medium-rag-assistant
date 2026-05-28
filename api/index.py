@@ -140,6 +140,17 @@ def _generate(system: str, user: str) -> str:
 app = Flask(__name__)
 
 
+@app.route("/", methods=["GET"])
+def root():
+    return jsonify({
+        "status": "ok",
+        "endpoints": {
+            "POST /api/prompt": "RAG query — body: {\"question\": \"...\"}",
+            "GET  /api/stats":  "Hyperparameter configuration",
+        }
+    }), 200
+
+
 @app.route("/api/prompt", methods=["POST"])
 def prompt():
     body = request.get_json(force=True, silent=True) or {}

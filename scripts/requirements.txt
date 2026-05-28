@@ -1,0 +1,2 @@
+langchain-openai>=0.1.0
+numpy>=1.26.0

@@ -1,6 +1,9 @@
 {
   "functions": {
-    "api/*.py": {
+    "api/prompt.py": {
+      "maxDuration": 60
+    },
+    "api/stats.py": {
       "maxDuration": 60
     }
   }
